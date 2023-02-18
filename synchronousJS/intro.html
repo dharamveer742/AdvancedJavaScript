@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <button id="myBtn" onclick="myFunc()">change Page</button>
+    </form>
+    <button id="myBtn2" onclick="myFunc()">outside of form</button>
+
+    <script>
+        console.log("Hello");
+        console.log(window.location.protocol);
+        document.getElementById("myBtn").addEventListener("click", function () {
+            event.preventDefault();
+        });
+        function myFunc() {
+            window.location.href = "https://www.geeksforgeeks.org/";
+        }
+    </script>
+    
+</body>
+
+</html>
+
+<!-- Generally when we click a Button inside our form, button performs ts actions and the page gets reloaded to its original state. 
+    To do not refresh the page we add event.preventDefault() at the end of our JavaScript function. -->
+
+<!-- The Document.location read-only property returns a Location object, which contains information about the URL of the document and provides 
+    methods for changing that URL and loading another URL. -->
